@@ -2,8 +2,7 @@
 
 var defLib = {
 
-    "planets": ["Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Uranus",
-        "Neptune", "Pluto"],
+    "planets": ["Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"],
 
     "stars": ["Proxima Centauri", "Barnard's Star", "Sirius A", "Epsilon Eridani"],
 
@@ -176,5 +175,5 @@ var defLib = {
 
 
 module.exports.getWords = function(name) {
-    return "OK " + name;
+    return defLib[name];
 };
