@@ -1,4 +1,7 @@
 "use strict";
+var util = require('util'),
+    nu = require('./nostra_utils');
+
 
 var defLib = {
 
@@ -174,6 +177,65 @@ var defLib = {
 };
 
 
-module.exports.getWords = function(name) {
+function consolation() {
+    var rnum = Math.floor(Math.random() * 10);
+    if (rnum <= 6) {
+        var when = nu.chooseFrom(["shortly", "soon", "in due time"]);
+        return util.format(", but don't worry, everything will improve %s", when);
+    } else if (rnum <= 8) {
+        return ", perhaps you need a change in your life?";
+    } else {
+        return "...";
+    }
+}
+
+
+function positiveIntensify() {
+    var rnum = Math.floor(Math.random() * 10);
+
+    if (rnum <= 5) {
+        var verb = nu.chooseFrom(["say", "do"]);
+        return util.format(", and there's nothing anyone can %s to stop you", verb);
+    } else if (rnum <= 8) {
+        return ", and you don't care who knows it";
+    } else {
+        return ", and you don't give a damn";
+    }
+}
+
+
+/**
+ * Warns of what to avoid
+ * @returns {*}
+ */
+function warning() {
+    var sentence = "";
+
+    var avoidList = getWords("avoid_list");
+    var avoid = nu.chooseFrom(avoidList);
+
+    var rnum = Math.floor(Math.random() * 10);
+
+    if (rnum <= 3) {
+        sentence = util.format("You would be well advised to avoid %s", avoid);
+    } else if (rnum <= 6){
+        sentence = util.format("Avoid %s at all costs", avoid);
+    } else if (rnum <= 8) {
+        sentence = util.format("Steer clear of %s for a stress-free week", avoid);
+    } else {
+        sentence = util.format("For a peaceful week, avoid %s", avoid);
+    }
+    return nu.sentenceCase(sentence);
+}
+
+
+function getWords(name) {
     return defLib[name];
-};
+}
+
+
+
+module.exports.getWords = getWords;
+module.exports.consolation = consolation;
+module.exports.warning = warning;
+module.exports.positiveIntensify = positiveIntensify;

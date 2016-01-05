@@ -4,9 +4,9 @@ var request = require('supertest'),
     chai = require('chai'),
     expect = chai.expect;
 
-var word_library = require('../word_library');
-var nostra = require('../nostra');
-var nostraUtils = require('../nostra_utils');
+var word_library = require('../nostra/word_library');
+var nostra = require('../nostra/nostra');
+var nostraUtils = require('../nostra/nostra_utils');
 
 
 describe('nostra', function(){
@@ -29,12 +29,6 @@ describe('nostra', function(){
         expect(results).to.have.length.of.at.least(2);
     });
 
-    it('warning', function(){
-        var results = nostra.warning();
-        //console.log(results);
-        expect(results).to.have.length.of.at.least(2);
-    });
-
     it('feeling', function(){
         var results = nostra.feeling('good');
         //console.log(results);
@@ -52,6 +46,11 @@ describe('word_library', function(){
         expect(JSON.stringify(results)).to.equal(JSON.stringify(expected));
     });
 
+    it('warning', function(){
+        var results = word_library.warning();
+        //console.log(results);
+        expect(results).to.have.length.of.at.least(2);
+    });
 });
 
 describe('nostra utils', function(){
