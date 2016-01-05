@@ -15,16 +15,30 @@ describe('word_library', function(){
         var results = word_library.getWords("planets");
         var expected = ["Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
         expect(JSON.stringify(results)).to.equal(JSON.stringify(expected));
-    })
+    });
+
+    it('relationship', function(){
+        var results = nostra.relationship('good');
+        console.log(results);
+        expect(results).to.have.length.of.at.least(2);
+    });
 });
 
 describe('nostra sentences', function(){
 
     it('warning', function(){
-        var warning = nostra.sentences.warning();
-        console.log(warning);
-        expect(warning).to.have.length.of.at.least(2);
-    })
+        var results = nostra.sentences.warning();
+        console.log(results);
+        expect(results).to.have.length.of.at.least(2);
+    });
+
+    it('feeling', function(){
+        var results = nostra.sentences.feeling('good');
+        console.log(results);
+        expect(results).to.have.length.of.at.least(2);
+    });
+
+
 });
 
 describe('nostra utils', function(){

@@ -1,4 +1,4 @@
-
+"use strict";
 
 /**
  * Capitalise the first letter of the sentence and add a full stop.
@@ -23,4 +23,15 @@ function sentenceCase(sentence, exciting) {
     }
 }
 
+// Prefix with 'a' or 'an', as appropriate.
+function an(word) {
+    if (["a", "e", "i", "o", "u"].indexOf(word[0]) > -1) {
+        return "an " + word;
+    } else {
+        return "a " + word;
+    }
+}
+
+
 module.exports.sentenceCase = sentenceCase;
+module.exports.an = an;
