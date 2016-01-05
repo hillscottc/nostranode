@@ -4,13 +4,77 @@ var util = require('util'),
     nostraUtil = require('./nostra_utils');
 
 
-// Return random item from a list.
+
+/**
+ * Generate a three to four sentence horoscope.
+ * @returns {string}
+ */
+function generate() {
+    var rnum = Math.floor(Math.random() * 10);
+    var mood;
+    if (rnum <= 8) {
+        mood = "good";
+    } else {
+        mood = "bad";
+    }
+
+    var sentences = [
+        feeling(mood),
+        warning(),
+        chooseFrom([relationship(mood), encounter(mood)])
+    ];
+
+    // randomize (shuffle) the array
+    sentences = shuffle(sentences);
+
+    // Select 2 or 3 sentences, to add to the random feel
+    var num_s = Math.floor(Math.random() * 2) + 2;
+    sentences = sentences.slice(0, num_s);
+    return sentences.join(" ");
+}
+
+
+/**
+ * A fast means to randomize short arrays.
+ * http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+ * @param array
+ * @returns {*}
+ */
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
+
+
+/**
+ * Return random item from a list.
+ * @param items
+ * @returns {*}
+ */
 function chooseFrom(items) {
     return items[Math.floor(Math.random() * items.length)]
 }
 
 
-// Convert 'ing' endings to 'ed' endings.
+/**
+ * Convert 'ing' endings to 'ed' endings.
+ * @param word
+ * @returns {*}
+ */
 function ingToEd(word) {
     if (word.slice(-3) === "ing") {
         return word.slice(0, -3) + "ed"
@@ -33,6 +97,7 @@ function positiveIntensify() {
     }
 }
 
+
 function consolation() {
     var rnum = Math.floor(Math.random() * 10);
     if (rnum <= 6) {
@@ -44,6 +109,7 @@ function consolation() {
         return "...";
     }
 }
+
 
 function relationship(mood) {
     var verb, talk;
@@ -68,7 +134,11 @@ function relationship(mood) {
 
 }
 
-// Generate a few sentences about a meeting with another person.
+
+/**
+ * Generate a few sentences about a meeting with another person.
+ * @param mood
+ */
 function encounter(mood) {
 
     //Sentence 1: The meeting
@@ -103,56 +173,64 @@ function encounter(mood) {
     return util.format("%s %s", s1, s2);
 }
 
-// Functions to generate sentences of various types.
-var sentences = {
 
-    // warns of what to avoid
-    warning: function() {
-        var sentence = "";
+/**
+ * Warns of what to avoid
+ * @returns {*}
+ */
+function warning() {
+    var sentence = "";
 
-        var avoidList = getWords("avoid_list");
-        var avoid = chooseFrom(avoidList);
+    var avoidList = getWords("avoid_list");
+    var avoid = chooseFrom(avoidList);
 
-        var rnum = Math.floor(Math.random() * 10);
+    var rnum = Math.floor(Math.random() * 10);
 
-        if (rnum <= 3) {
-            sentence = util.format("You would be well advised to avoid %s", avoid);
-        } else if (rnum <= 6){
-            sentence = util.format("Avoid %s at all costs", avoid);
-        } else if (rnum <= 8) {
-            sentence = util.format("Steer clear of %s for a stress-free week", avoid);
-        } else {
-            sentence = util.format("For a peaceful week, avoid %s", avoid);
-        }
-        return nostraUtil.sentenceCase(sentence);
-    },
-
-    // a mood-based feeling
-    feeling: function(mood) {
-        var rnum = Math.floor(Math.random() * 10);
-        var adjectives = getWords(mood + "_feeling_adjs");
-        //var degrees = getWords("neutral_degrees") + getWords(mood + "_degrees");
-        var degrees = getWords("neutral_degrees").concat(getWords(mood + "_degrees"));
-
-        var adj = ingToEd(chooseFrom(adjectives));
-        var degree = chooseFrom(degrees);
-        var ending;
-        if (mood === "good") {
-            ending = positiveIntensify();
-        } else {
-            ending = consolation();
-        }
-        var exciting = false;
-        if (mood === "GOOD" && rnum <= 5) {
-            exciting = true;
-        }
-        var are = chooseFrom([" are", "'re"]);
-        var sentence = util.format("You%s feeling %s %s%s", are, degree, adj, ending)
-        return nostraUtil.sentenceCase(sentence, exciting);
+    if (rnum <= 3) {
+        sentence = util.format("You would be well advised to avoid %s", avoid);
+    } else if (rnum <= 6){
+        sentence = util.format("Avoid %s at all costs", avoid);
+    } else if (rnum <= 8) {
+        sentence = util.format("Steer clear of %s for a stress-free week", avoid);
+    } else {
+        sentence = util.format("For a peaceful week, avoid %s", avoid);
     }
+    return nostraUtil.sentenceCase(sentence);
+}
 
-};
 
-module.exports.sentences = sentences;
+/**
+ * A mood-based feeling
+ * @param mood
+ * @returns {*}
+ */
+function feeling(mood) {
+    var rnum = Math.floor(Math.random() * 10);
+    var adjectives = getWords(mood + "_feeling_adjs");
+    //var degrees = getWords("neutral_degrees") + getWords(mood + "_degrees");
+    var degrees = getWords("neutral_degrees").concat(getWords(mood + "_degrees"));
+
+    var adj = ingToEd(chooseFrom(adjectives));
+    var degree = chooseFrom(degrees);
+    var ending;
+    if (mood === "good") {
+        ending = positiveIntensify();
+    } else {
+        ending = consolation();
+    }
+    var exciting = false;
+    if (mood === "GOOD" && rnum <= 5) {
+        exciting = true;
+    }
+    var are = chooseFrom([" are", "'re"]);
+    var sentence = util.format("You%s feeling %s %s%s", are, degree, adj, ending)
+    return nostraUtil.sentenceCase(sentence, exciting);
+}
+
+
+
+module.exports.warning = warning;
+module.exports.feeling = feeling;
 module.exports.relationship = relationship;
 module.exports.encounter = encounter;
+module.exports.generate = generate;

@@ -23,7 +23,11 @@ function sentenceCase(sentence, exciting) {
     }
 }
 
-// Prefix with 'a' or 'an', as appropriate.
+/**
+ * Prefix with 'a' or 'an', as appropriate.
+ * @param word
+ * @returns {string}
+ */
 function an(word) {
     if (["a", "e", "i", "o", "u"].indexOf(word[0]) > -1) {
         return "an " + word;

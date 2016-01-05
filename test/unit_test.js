@@ -9,6 +9,41 @@ var nostra = require('../nostra');
 var nostraUtils = require('../nostra_utils');
 
 
+describe('nostra', function(){
+
+    it('generate', function(){
+        var results = nostra.generate();
+        console.log(results);
+        expect(results).to.have.length.of.at.least(2);
+    });
+
+    it('relationship', function(){
+        var results = nostra.relationship('good');
+        //console.log(results);
+        expect(results).to.have.length.of.at.least(2);
+    });
+
+    it('encounter', function(){
+        var results = nostra.encounter('good');
+        //console.log(results);
+        expect(results).to.have.length.of.at.least(2);
+    });
+
+    it('warning', function(){
+        var results = nostra.warning();
+        //console.log(results);
+        expect(results).to.have.length.of.at.least(2);
+    });
+
+    it('feeling', function(){
+        var results = nostra.feeling('good');
+        //console.log(results);
+        expect(results).to.have.length.of.at.least(2);
+    });
+
+});
+
+
 describe('word_library', function(){
 
     it('getWords', function(){
@@ -16,35 +51,6 @@ describe('word_library', function(){
         var expected = ["Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
         expect(JSON.stringify(results)).to.equal(JSON.stringify(expected));
     });
-
-    it('relationship', function(){
-        var results = nostra.relationship('good');
-        console.log(results);
-        expect(results).to.have.length.of.at.least(2);
-    });
-
-    it('encounter', function(){
-        var results = nostra.encounter('good');
-        console.log(results);
-        expect(results).to.have.length.of.at.least(2);
-    });
-
-});
-
-describe('nostra sentences', function(){
-
-    it('warning', function(){
-        var results = nostra.sentences.warning();
-        console.log(results);
-        expect(results).to.have.length.of.at.least(2);
-    });
-
-    it('feeling', function(){
-        var results = nostra.sentences.feeling('good');
-        console.log(results);
-        expect(results).to.have.length.of.at.least(2);
-    });
-
 
 });
 
