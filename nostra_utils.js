@@ -7,23 +7,20 @@
  */
 function sentenceCase(sentence, exciting) {
 
-    if (typeof exciting === 'undefined') { exciting = false; }
+    if (typeof exciting === 'undefined') {
+        exciting = false;
+    }
 
-
-    sentence = sentence[0]
-
+    // uppercase the first letter
     sentence = sentence[0].toUpperCase() + sentence.slice(1);
 
-    return sentence;
-
-//    if sentence[-1] in {'.', '!', '?'}:
-//    return sentence
-//    elif exciting:
-//        return sentence + "!"
-//else:
-//    return sentence + "."
-
-
-
-
+    if (['.', '!', '?'].indexOf(sentence.slice(-1)) > -1) {
+        return sentence;
+    } else if (exciting) {
+        return sentence + "!";
+    } else {
+        return sentence + ".";
+    }
 }
+
+module.exports.sentenceCase = sentenceCase;

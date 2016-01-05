@@ -1,5 +1,6 @@
 var util = require('util'),
-    getWords = require('./word_library').getWords;
+    getWords = require('./word_library').getWords,
+    nostraUtil = require('./nostra_utils');
 
 
 var sentences = {
@@ -20,7 +21,7 @@ var sentences = {
         } else {
             sentence = util.format("For a peaceful week, avoid %s", avoid);
         }
-        return sentence;
+        return nostraUtil.sentenceCase(sentence);
     }
 };
 
