@@ -22,6 +22,13 @@ describe('word_library', function(){
         console.log(results);
         expect(results).to.have.length.of.at.least(2);
     });
+
+    it('encounter', function(){
+        var results = nostra.encounter('good');
+        console.log(results);
+        expect(results).to.have.length.of.at.least(2);
+    });
+
 });
 
 describe('nostra sentences', function(){

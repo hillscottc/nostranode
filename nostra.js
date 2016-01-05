@@ -68,6 +68,40 @@ function relationship(mood) {
 
 }
 
+// Generate a few sentences about a meeting with another person.
+function encounter(mood) {
+
+    //Sentence 1: The meeting
+    var familiar_people = getWords("familiar_people");
+    var strange_people = getWords("strange_people");
+    var locations = getWords("locations");
+
+    var person = chooseFrom(familiar_people.concat(strange_people));
+    var location = chooseFrom(getWords("locations"));
+    var preposition = location[0];
+    location = location[1];
+    var s1 = util.format("You may meet %s %s %s.", person, preposition, location);
+
+    // Sentence 2: The discussion
+    var discussions = getWords("neutral_discussions");
+    discussions.concat(getWords(mood + "_discussions"));
+    var feeling_nouns = getWords(mood + "_feeling_nouns");
+    var emotive_nouns = getWords(mood + "_emotive_nouns");
+    var conversation_topics = getWords("conversation_topics");
+
+    var discussion = chooseFrom(discussions);
+    var rnum = Math.floor(Math.random() * 10);
+    if (rnum <- 5) {
+        var feeling = chooseFrom(feeling_nouns);
+        feeling = "feelings of " + feeling;
+    } else {
+        feeling = chooseFrom(emotive_nouns);
+    }
+    var topic = chooseFrom(conversation_topics);
+    var s2 = util.format("%s about %s may lead to %s.", nostraUtil.an(discussion), topic, feeling);
+    s2 = nostraUtil.sentenceCase(s2);
+    return util.format("%s %s", s1, s2);
+}
 
 // Functions to generate sentences of various types.
 var sentences = {
@@ -121,3 +155,4 @@ var sentences = {
 
 module.exports.sentences = sentences;
 module.exports.relationship = relationship;
+module.exports.encounter = encounter;
