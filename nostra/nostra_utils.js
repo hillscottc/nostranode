@@ -7,20 +7,20 @@
  */
 function sentenceCase(sentence, exciting) {
 
-    if (typeof exciting === 'undefined') {
-        exciting = false;
-    }
+  if (typeof exciting === 'undefined') {
+    exciting = false;
+  }
 
-    // uppercase the first letter
-    sentence = sentence[0].toUpperCase() + sentence.slice(1);
+  // uppercase the first letter
+  sentence = sentence[0].toUpperCase() + sentence.slice(1);
 
-    if (['.', '!', '?'].indexOf(sentence.slice(-1)) > -1) {
-        return sentence;
-    } else if (exciting) {
-        return sentence + "!";
-    } else {
-        return sentence + ".";
-    }
+  if (['.', '!', '?'].indexOf(sentence.slice(-1)) > -1) {
+    return sentence;
+  } else if (exciting) {
+    return sentence + "!";
+  } else {
+    return sentence + ".";
+  }
 }
 
 
@@ -30,11 +30,11 @@ function sentenceCase(sentence, exciting) {
  * @returns {string}
  */
 function an(word) {
-    if (["a", "e", "i", "o", "u"].indexOf(word[0]) > -1) {
-        return "an " + word;
-    } else {
-        return "a " + word;
-    }
+  if (["a", "e", "i", "o", "u"].indexOf(word[0]) > -1) {
+    return "an " + word;
+  } else {
+    return "a " + word;
+  }
 }
 
 
@@ -45,22 +45,22 @@ function an(word) {
  * @returns {*}
  */
 function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+  var currentIndex = array.length, temporaryValue, randomIndex;
 
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
 
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
 
-        // And swap it with the current element.
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
 
-    return array;
+  return array;
 }
 
 
@@ -70,7 +70,7 @@ function shuffle(array) {
  * @returns {*}
  */
 function chooseFrom(items) {
-    return items[Math.floor(Math.random() * items.length)]
+  return items[Math.floor(Math.random() * items.length)]
 }
 
 
@@ -80,11 +80,11 @@ function chooseFrom(items) {
  * @returns {*}
  */
 function ingToEd(word) {
-    if (word.slice(-3) === "ing") {
-        return word.slice(0, -3) + "ed"
-    } else {
-        return word
-    }
+  if (word.slice(-3) === "ing") {
+    return word.slice(0, -3) + "ed"
+  } else {
+    return word
+  }
 }
 
 
