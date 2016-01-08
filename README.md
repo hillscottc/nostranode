@@ -8,11 +8,11 @@ Adapted from Michael Sproul's python [Horoscope Generator](https://github.com/mi
 
 
 
-## Install:
+## Install
 
     $ npm install
 
-## Run:
+## Run
 
 Use `npm start` to run the app, with a temporary env variable of `DEBUG=nostranode:*`, set according to your system.
 
@@ -25,4 +25,19 @@ On Windows:
     > set DEBUG=nostranode:* & npm start
 
     
+## Build
+
+    $ npm install -g express express-generator
+    $ npm install -g yo
+    $ npm install -g generator-angular
+    $ npm install -g nodemon
+    $ npm install -g grunt grunt-cli
+    $ npm install -g bower
     
+    To be able to `grunt serve` the angular app, you need the compass ruby gem. 
+    $ gem install compass
+
+
+
+
+
