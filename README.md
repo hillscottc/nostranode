@@ -5,6 +5,7 @@ A fortune generator web application in Node.js.
 Adapted from Michael Sproul's python [Horoscope Generator](https://github.com/michaelsproul/bullshit). 
 
 
+
 ## Install:
 
     $ npm install
