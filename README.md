@@ -6,6 +6,7 @@ Adapted from Michael Sproul's python [Horoscope Generator](https://github.com/mi
 
 
 
+
 ## Install:
 
     $ npm install
