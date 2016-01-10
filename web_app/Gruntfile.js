@@ -1,4 +1,4 @@
-// Generated on 2016-01-08 using generator-angular 0.15.1
+// Generated on 2016-01-09 using generator-angular 0.15.1
 'use strict';
 
 // # Globbing
@@ -224,7 +224,7 @@ module.exports = function (grunt) {
         src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         ignorePath: /(\.\.\/){1,2}bower_components\//
       }
-    }, 
+    },
 
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
