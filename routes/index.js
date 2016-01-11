@@ -1,5 +1,5 @@
 var express = require('express'),
-    nostra = require('../nostra/nostra');
+    nostra = require('nostra');
 
 var router = express.Router();
 

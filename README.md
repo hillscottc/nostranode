@@ -1,8 +1,6 @@
 # nostranode
-A fortune generator web application in Node.js. 
-
-
-Adapted from Michael Sproul's python [Horoscope Generator](https://github.com/michaelsproul/bullshit). 
+A Node+Express app for displaying fortunes. 
+Serves as a web front-end for the [nostra](https://www.npmjs.com/package/nostra) npm module.
 
 
 ## Install:
