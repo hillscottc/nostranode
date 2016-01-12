@@ -23,4 +23,17 @@ On Windows:
     > set DEBUG=nostranode:* & npm start
 
     
-    
+## Docker Building
+The app can also be run as a virtualized Docker container.
+
+Build:
+
+    $ docker build -t hillscottc/nostranode .
+
+Run:
+
+    $ docker run -d -P hillscottc/nostranode
+    $ docker ps    
+
+The `PORTS` column shows what local port to hit with your browser to see the app running. It will be something like `0.0.0.0:32772`.
+
