@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/hillscottc/nostranode.svg)](https://travis-ci.org/hillscottc/nostranode)[![Coverage Status](https://coveralls.io/repos/hillscottc/nostranode/badge.svg?branch=master&service=github)](https://coveralls.io/github/hillscottc/nostranode?branch=master)
+
 # nostranode
 A Node+Express app for displaying fortunes. 
 Serves as a web front-end for the [nostra](https://www.npmjs.com/package/nostra) npm module.
