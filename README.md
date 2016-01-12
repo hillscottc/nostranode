@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/hillscottc/nostranode.svg)](https://travis-ci.org/hillscottc/nostranode)
+[![Build Status](https://travis-ci.org/hillscottc/nostranode.svg)](https://travis-ci.org/hillscottc/nostranode)[![Coverage Status](https://coveralls.io/repos/hillscottc/nostranode/badge.svg?branch=master&service=github)](https://coveralls.io/github/hillscottc/nostranode?branch=master)
 
 # nostranode
 A Node+Express app for displaying fortunes. 
