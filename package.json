@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "mocha --reporter spec"
+    "test": "node_modules/.bin/mocha --reporter spec"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -13,12 +13,14 @@
     "express": "~4.13.1",
     "hbs": "~3.1.0",
     "morgan": "~1.6.1",
-    "node-fortune": "^1.0.0",
     "nostra": "^0.0.5",
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
     "chai": "^3.4.1",
+    "coveralls": "^2.11.6",
+    "generator-karma": "^1.0.1",
+    "mocha": "^2.3.4",
     "supertest": "^1.1.0"
   }
 }
