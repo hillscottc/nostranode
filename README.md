@@ -4,6 +4,7 @@
 A Node+Express app for displaying fortunes. 
 Serves as a web front-end for the [nostra](https://www.npmjs.com/package/nostra) npm module.
 
+Deployed at: [https://frozen-atoll-5853.herokuapp.com/](https://frozen-atoll-5853.herokuapp.com/) 
 
 ## Install:
 
