@@ -1,84 +1,44 @@
-var app = require('./app'),
-    debug = require('debug')('nostranode:server'),
-    http = require('http');
+// lightweight server for an angular app
+var express        = require('express');
+var app            = express();
+var bodyParser     = require('body-parser');
+var methodOverride = require('method-override');
 
-/**
- * Get port from environment and store in Express.
- */
+// configuration ===========================================
 
-var port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
+// config files
+//var db = require('./config/db');
 
-/**
- * Create HTTP server.
- */
+// set our port
+var port = process.env.PORT || 3000;
 
-var server = http.createServer(app);
+// connect to our mongoDB database 
+// (uncomment after you enter in your own credentials in config/db.js)
+// mongoose.connect(db.url); 
 
-/**
- * Listen on provided port, on all network interfaces.
- */
+// get all data/stuff of the body (POST) parameters
+// parse application/json 
+app.use(bodyParser.json());
 
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+// parse application/vnd.api+json as json
+app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
-/**
- * Normalize a port into a number, string, or false.
- */
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
 
-function normalizePort(val) {
-  var port = parseInt(val, 10);
+// override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
+app.use(methodOverride('X-HTTP-Method-Override'));
 
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
+// set the static files location /public/img will be /img for users
+app.use(express.static(__dirname + '/public'));
 
-  if (port >= 0) {
-    // port number
-    return port;
-  }
+// routes ==================================================
+require('./app/routes')(app); // configure our routes
 
-  return false;
-}
+// start app ===============================================
+app.listen(port);
 
-/**
- * Event listener for HTTP server "error" event.
- */
+console.log('Running on port ' + port);
 
-function onError(error) {
-  if (error.syscall !== 'listen') {
-    throw error;
-  }
-
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
-
-  // handle specific listen errors with friendly messages
-  switch (error.code) {
-    case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
-      process.exit(1);
-      break;
-    case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
-      process.exit(1);
-      break;
-    default:
-      throw error;
-  }
-}
-
-/**
- * Event listener for HTTP server "listening" event.
- */
-
-function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  debug('Listening on ' + bind);
-}
+// expose app           
+exports = module.exports = app;
