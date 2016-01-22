@@ -3,8 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+<<<<<<< HEAD
     "start": "NODE_ENV=dev nodemon ./bin/www",
     "test": "mocha --reporter spec"
+=======
+    "start": "node ./bin/www",
+    "test": "node_modules/.bin/mocha --reporter spec",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
+>>>>>>> dev
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -13,11 +19,16 @@
     "express": "~4.13.1",
     "hbs": "~3.1.0",
     "morgan": "~1.6.1",
-    "node-fortune": "^1.0.0",
-    "serve-favicon": "~2.3.0"
+    "nostra": "^0.0.5",
+    "serve-favicon": "~2.3.0",
+    "bower": "^1.7.2"
   },
   "devDependencies": {
     "chai": "^3.4.1",
+    "coveralls": "^2.11.6",
+    "generator-karma": "^1.0.1",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.3.4",
     "supertest": "^1.1.0"
   }
 }
