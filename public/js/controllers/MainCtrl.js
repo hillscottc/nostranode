@@ -2,9 +2,10 @@
 
 angular.module('MainCtrl', []).controller('MainController', function($scope) {
 
-  var nostra = require('nostra');
+  //var nostra = require('nostra');
+  //var fortune = nostra.generate();
+  //console.log(fortune);
 
-  console.log(nostra.generate());
-	$scope.tagline = nostra.generate();
+	$scope.tagline = "hello";
 
 });
