@@ -16,10 +16,10 @@
     "hbs": "~3.1.0",
     "morgan": "~1.6.1",
     "nostra": "^0.0.5",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "bower": "^1.7.2",
   },
   "devDependencies": {
-    "bower": "^1.7.2",
     "chai": "^3.4.1",
     "coveralls": "^2.11.6",
     "generator-karma": "^1.0.1",
