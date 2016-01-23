@@ -1,16 +1,13 @@
 'use strict';
 
-angular.module('nostranodeApp', [
-  'nostranodeApp.auth',
-  'nostranodeApp.admin',
-  'nostranodeApp.constants',
+angular.module('testNgApp', [
+  'testNgApp.constants',
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
-  'ui.bootstrap',
-  'validation.match'
+  'ui.bootstrap'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider

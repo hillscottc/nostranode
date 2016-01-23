@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('nostranodeApp')
+angular.module('testNgApp')
   .config(function($stateProvider) {
     $stateProvider
       .state('main', {

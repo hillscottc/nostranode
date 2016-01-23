@@ -15,7 +15,6 @@ import errorHandler from 'errorhandler';
 import path from 'path';
 import lusca from 'lusca';
 import config from './environment';
-import passport from 'passport';
 import session from 'express-session';
 import connectMongo from 'connect-mongo';
 import mongoose from 'mongoose';
@@ -32,7 +31,6 @@ export default function(app) {
   app.use(bodyParser.json());
   app.use(methodOverride());
   app.use(cookieParser());
-  app.use(passport.initialize());
 
   // Persist sessions with mongoStore / sequelizeStore
   // We need to enable sessions for passport-twitter because it's an
@@ -43,7 +41,7 @@ export default function(app) {
     resave: false,
     store: new mongoStore({
       mongooseConnection: mongoose.connection,
-      db: 'nostranode'
+      db: 'test-ng'
     })
   }));
 

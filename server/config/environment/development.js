@@ -6,7 +6,7 @@ module.exports = {
 
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/nostranode-dev'
+    uri: 'mongodb://localhost/testng-dev'
   },
 
   // Seed database on startup

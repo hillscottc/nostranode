@@ -30,7 +30,7 @@ class MainController {
   }
 }
 
-angular.module('nostranodeApp')
+angular.module('testNgApp')
   .controller('MainController', MainController);
 
 })();

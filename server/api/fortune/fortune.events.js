@@ -1,15 +1,15 @@
 /**
- * User model events
+ * Fortune model events
  */
 
 'use strict';
 
 import {EventEmitter} from 'events';
-import User from './user.model';
-var UserEvents = new EventEmitter();
+var Fortune = require('./fortune.model');
+var FortuneEvents = new EventEmitter();
 
 // Set max event listeners (0 == unlimited)
-UserEvents.setMaxListeners(0);
+FortuneEvents.setMaxListeners(0);
 
 // Model events
 var events = {
@@ -20,14 +20,14 @@ var events = {
 // Register the event emitter to the model events
 for (var e in events) {
   var event = events[e];
-  User.schema.post(e, emitEvent(event));
+  Fortune.schema.post(e, emitEvent(event));
 }
 
 function emitEvent(event) {
   return function(doc) {
-    UserEvents.emit(event + ':' + doc._id, doc);
-    UserEvents.emit(event, doc);
+    FortuneEvents.emit(event + ':' + doc._id, doc);
+    FortuneEvents.emit(event, doc);
   }
 }
 
-export default UserEvents;
+export default FortuneEvents;

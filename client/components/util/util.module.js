@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('nostranodeApp.util', []);
+angular.module('testNgApp.util', []);

@@ -2,20 +2,17 @@
 
 class NavbarController {
   //start-non-standard
-  menu = [{
-    'title': 'Home',
-    'state': 'main'
-  }];
+  menu = [
+    {'title': 'Home', 'state': 'main'},
+    {'title': 'MyPage', 'state': 'mypage'}
+  ];
 
   isCollapsed = true;
   //end-non-standard
 
-  constructor(Auth) {
-    this.isLoggedIn = Auth.isLoggedIn;
-    this.isAdmin = Auth.isAdmin;
-    this.getCurrentUser = Auth.getCurrentUser;
+  constructor() {
   }
 }
 
-angular.module('nostranodeApp')
+angular.module('testNgApp')
   .controller('NavbarController', NavbarController);

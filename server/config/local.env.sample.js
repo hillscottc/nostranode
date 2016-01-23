@@ -7,7 +7,7 @@
 
 module.exports = {
   DOMAIN:           'http://localhost:9000',
-  SESSION_SECRET:   'nostranode-secret',
+  SESSION_SECRET:   'testng-secret',
 
   // Control debug level for modules using visionmedia/debug
   DEBUG: ''
