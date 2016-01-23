@@ -1,40 +1,32 @@
-[![Build Status](https://travis-ci.org/hillscottc/nostranode.svg)](https://travis-ci.org/hillscottc/nostranode)[![Coverage Status](https://coveralls.io/repos/hillscottc/nostranode/badge.svg?branch=master&service=github)](https://coveralls.io/github/hillscottc/nostranode?branch=master)
-
 # nostranode
-A Node+Express app for displaying fortunes. 
-Serves as a web front-end for the [nostra](https://www.npmjs.com/package/nostra) npm module.
 
-Deployed at: [https://frozen-atoll-5853.herokuapp.com/](https://frozen-atoll-5853.herokuapp.com/) 
+This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 3.2.0.
 
+## Getting Started
 
-## Install:
+### Prerequisites
 
-    $ npm install
+- [Git](https://git-scm.com/)
+- [Node.js and npm](nodejs.org) Node ^4.2.3, npm ^2.14.7
+- [Bower](bower.io) (`npm install --global bower`)
+- [Ruby](https://www.ruby-lang.org) and then `gem install sass`
+- [Grunt](http://gruntjs.com/) (`npm install --global grunt-cli`)
+- [MongoDB](https://www.mongodb.org/) - Keep a running daemon with `mongod`
 
-## Run:
+### Developing
 
-Use `npm start` to run the app, with a temporary env variable of `DEBUG=nostranode:*`, set according to your system.
+1. Run `npm install` to install server dependencies.
 
-On MacOS or Linux:
+2. Run `bower install` to install front-end dependencies.
 
-    $ DEBUG=nostranode:* npm start
+3. Run `mongod` in a separate shell to keep an instance of the MongoDB Daemon running
 
-On Windows:
+4. Run `grunt serve` to start the development server. It should automatically open the client in your browser when ready.
 
-    > set DEBUG=nostranode:* & npm start
+## Build & development
 
-    
-## Docker Building
-The app can also be run as a virtualized Docker container.
+Run `grunt build` for building and `grunt serve` for preview.
 
-Build:
+## Testing
 
-    $ docker build -t hillscottc/nostranode .
-
-Run:
-
-    $ docker run -d -P hillscottc/nostranode
-    $ docker ps    
-
-The `PORTS` column shows what local port to hit with your browser to see the app running. It will be something like `0.0.0.0:32772`.
-
+Running `npm test` will run the unit tests with karma.
