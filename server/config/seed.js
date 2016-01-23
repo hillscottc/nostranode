@@ -5,7 +5,6 @@
 
 'use strict';
 import Thing from '../api/thing/thing.model';
-import Fortune from '../api/fortune/fortune.model';
 
 Thing.find({}).removeAsync()
   .then(() => {
@@ -39,10 +38,3 @@ Thing.find({}).removeAsync()
     });
   });
 
-
-Fortune.find({}).removeAsync()
-  .then(() => {
-    Fortune.create({
-      fortune: 'coolness'
-    });
-  });

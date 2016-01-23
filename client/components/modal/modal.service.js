@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('testNgApp')
+angular.module('nostranodeApp')
   .factory('Modal', function ($rootScope, $modal) {
     /**
      * Opens a modal

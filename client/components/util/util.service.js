@@ -53,7 +53,7 @@ function UtilService($window) {
   return Util;
 }
 
-angular.module('testNgApp.util')
+angular.module('nostranodeApp.util')
   .factory('Util', UtilService);
 
 })();

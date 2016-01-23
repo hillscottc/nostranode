@@ -3,7 +3,7 @@
 describe('Controller: MainController', function() {
 
   // load the controller's module
-  beforeEach(module('testNgApp'));
+  beforeEach(module('nostranodeApp'));
   beforeEach(module('stateMock'));
   beforeEach(module('socketMock'));
 

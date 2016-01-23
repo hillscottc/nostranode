@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('testNgApp')
+angular.module('nostranodeApp')
   .directive('footer', function () {
     return {
       templateUrl: 'components/footer/footer.html',

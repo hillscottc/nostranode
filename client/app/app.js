@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('testNgApp', [
-  'testNgApp.constants',
+angular.module('nostranodeApp', [
+  'nostranodeApp.constants',
   'ngCookies',
   'ngResource',
   'ngSanitize',
