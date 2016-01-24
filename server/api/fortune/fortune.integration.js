@@ -3,7 +3,6 @@
 var app = require('../..');
 import request from 'supertest';
 
-var newFortune;
 
 describe('Fortune API:', function() {
 
@@ -25,8 +24,8 @@ describe('Fortune API:', function() {
     });
 
     it('should respond with JSON array', function() {
-      //expect(fortunes).to.be.instanceOf(Array);
-      expect(JSON.stringify(fortunes)).to.have.length.above(10);
+      var fortuneTxt = fortunes.fortune;
+      expect(JSON.stringify(fortuneTxt)).to.have.length.above(10);
     });
 
   });
