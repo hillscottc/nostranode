@@ -1,6 +1,10 @@
 # nostranode
 
-This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 3.2.0.
+A simple front end for the [nostra npm module](https://www.npmjs.com/package/nostra). 
+
+An [Express](http://expressjs.com/) + [Angular](https://angularjs.org/) web app with a [Bootstrap](http://getbootstrap.com/) + [jQuery](https://jqueryui.com/) responsive layout.
+
+Scaffolded with [Yeoman](http://yeoman.io/), [Grunt](http://gruntjs.com/), and the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack).
 
 ## Getting Started
 
