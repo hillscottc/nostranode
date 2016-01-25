@@ -4,9 +4,9 @@
 
 class MainController {
 
-  constructor($http, $scope, socket) {
+  constructor($http) {
     this.$http = $http;
-    this.fortune = "";
+    this.fortune = '';
   }
 
   getFortune() {

@@ -11,7 +11,14 @@ import config from './config/environment';
 import http from 'http';
 
 // Connect to MongoDB
-mongoose.connect(config.mongo.uri, config.mongo.options);
+
+mongoose.connect('mongodb://localhost/nostranode');
+
+
+//console.log(config.mongo.uri);
+//mongoose.connect(config.mongo.uri, config.mongo.options);
+
+
 mongoose.connection.on('error', function(err) {
   console.error('MongoDB connection error: ' + err);
   process.exit(-1);
