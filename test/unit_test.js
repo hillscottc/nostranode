@@ -1,14 +1,11 @@
-"use strict";
-var request = require('supertest'),
-    assert = require('assert'),
-    chai = require('chai'),
-    expect = chai.expect,
-    nostra = require('nostra');
+import {nostra} from 'nostra';
+import {sinon, chai, request, assert, app} from './test_helper'
 
-var app = require('../app');
+var expect = chai.expect;
 
-describe('routes', function(){
-  it('GET /', function(done){
+
+describe('routes', () => {
+  it('GET /', (done) => {
     request(app)
         .get('/')
         .expect(200)
@@ -23,12 +20,12 @@ describe('routes', function(){
 
 
 
-describe('Fortune API:', function() {
+describe('Fortune API:', () => {
 
-  describe('GET /api/fortune', function() {
+  describe('GET /api/fortune', () => {
     var fortune;
 
-    beforeEach(function(done) {
+    beforeEach((done) => {
       request(app)
           .get('/api/fortune')
           .expect(200)
@@ -40,11 +37,11 @@ describe('Fortune API:', function() {
           });
     });
 
-    it('should be longer than 50 chars', function() {
+    it('should be longer than 50 chars', () => {
       expect(JSON.stringify(fortune)).to.have.length.above(50);
     });
 
-    it('should contain at least 2 sentences', function() {
+    it('should contain at least 2 sentences', () => {
       expect(fortune.split('.').length).to.be.above(1);
     });
 
