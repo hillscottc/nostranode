@@ -20158,6 +20158,74 @@
 	  value: true
 	});
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(33);
+
+	var _Fortune = __webpack_require__(169);
+
+	var _Fortune2 = _interopRequireDefault(_Fortune);
+
+	var _nostra = __webpack_require__(170);
+
+	var nostra = _interopRequireWildcard(_nostra);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// import $ from 'jquery';
+
+	var App = function (_React$Component) {
+	  _inherits(App, _React$Component);
+
+	  function App(props) {
+	    _classCallCheck(this, App);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(App).call(this, props));
+
+	    _this.state = { "fortune": nostra.generate() };
+	    return _this;
+	  }
+
+	  _createClass(App, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_Fortune2.default, { fortune: this.state.fortune })
+	      );
+	    }
+	  }]);
+
+	  return App;
+	}(_react2.default.Component);
+
+	exports.default = App;
+
+/***/ },
+/* 169 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -20166,47 +20234,1234 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// import $ from 'jquery';
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var App = _react2.default.createClass({
-	  displayName: 'App',
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	  loadFromApi: function loadFromApi() {
-	    // const url = "http://disneypubworlddev.cp.disney.com/demo2/public/api.asp?countries=1";
-	    // $.ajax({
-	    //   url: url,
-	    //   dataType: 'json',
-	    //   cache: false,
-	    //   success: function(data) {
-	    //     this.setState({countries: data});
-	    //   }.bind(this),
-	    //   error: function(xhr, status, err) {
-	    //     console.error(url, status, err.toString());
-	    //   }.bind(this)
-	    // });
-	  },
+	var Fortune = function (_React$Component) {
+	  _inherits(Fortune, _React$Component);
 
-	  getInitialState: function getInitialState() {
-	    // return {"countries": [{"Country":"USA", "ListCode":"1"}, {"Country":"Sweden", "ListCode": "2"}]}
-	    return { "countries": [] };
-	  },
+	  function Fortune(props) {
+	    _classCallCheck(this, Fortune);
 
-	  componentDidMount: function componentDidMount() {
-	    // this.loadFromApi();
-	  },
-
-	  render: function render() {
-
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      'Hello, world!'
-	    );
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Fortune).call(this, props));
 	  }
-	});
 
-	exports.default = App;
+	  _createClass(Fortune, [{
+	    key: 'getFortune',
+	    value: function getFortune() {
+	      this.setState({ fortune: "blah" });
+	      console.log("Getting fortune.");
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement('input', { type: 'submit', 'class': 'btn btn-primary', value: 'Get Fortune', onClick: function onClick() {
+	            return _this2.getFortune();
+	          } }),
+	        this.props.fortune
+	      );
+	    }
+	  }]);
+
+	  return Fortune;
+	}(_react2.default.Component);
+
+	exports.default = Fortune;
+
+
+	Fortune.propTypes = {
+	  fortune: _react2.default.PropTypes.string
+	};
+
+	Fortune.defaultProps = {
+	  fortune: "What does the future hold?."
+	};
+
+/***/ },
+/* 170 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _word_library = __webpack_require__(171);
+
+	var _word_library2 = _interopRequireDefault(_word_library);
+
+	var _sentence_mgr = __webpack_require__(173);
+
+	var _sentence_mgr2 = _interopRequireDefault(_sentence_mgr);
+
+	var _nostra_utils = __webpack_require__(172);
+
+	var nu = _interopRequireWildcard(_nostra_utils);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var debug = __webpack_require__(175)('nostra');
+
+
+	module.exports = {
+
+	  /**
+	   * Generate a three to four sentence horoscope.
+	   * @returns {*[]}
+	   */
+	  generate: function generate() {
+	    var rnum = Math.floor(Math.random() * 10);
+	    var mood = void 0;
+	    if (rnum <= 8) {
+	      mood = "good";
+	    } else {
+	      mood = "bad";
+	    }
+
+	    var sentences = [_sentence_mgr2.default.feeling(mood), _word_library2.default.warning(), nu.chooseFrom([_sentence_mgr2.default.relationship(mood), _sentence_mgr2.default.encounter(mood)])];
+
+	    // randomize (shuffle) the array
+	    sentences = nu.shuffle(sentences);
+
+	    // Select 2 or 3 sentences, to add to the random feel
+	    var num_s = Math.floor(Math.random() * 2) + 2;
+	    sentences = sentences.slice(0, num_s);
+	    sentences = sentences.join(" ");
+
+	    sentences += " " + _sentence_mgr2.default.datePredict();
+
+	    debug(sentences);
+	    return sentences;
+	  }
+
+	};
+
+/***/ },
+/* 171 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _nostra_utils = __webpack_require__(172);
+
+	var nu = _interopRequireWildcard(_nostra_utils);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	var defLib = {
+
+	  "planets": ["Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"],
+
+	  "stars": ["Proxima Centauri", "Barnard's Star", "Sirius A", "Epsilon Eridani"],
+
+	  "aspects": ["conjunction", "sextile", "square", "trine", "opposition"],
+
+	  "wanky_events": ["a large Electromagnetic disturbance", "Quantum Flux", "the upcoming Solar eclipse", "Unusual planetary motion"],
+
+	  //# Time words
+	  "beginnings": ["arrival", "beginning", "start"],
+	  "endings": ["end", "death", "passing"],
+
+	  "time_periods": ["interlude", "period", "week", "day"],
+
+	  //# Feeling adjectives
+	  "good_feeling_adjs": ["romantic", "emotional", "reflective", "irreverent", "subversive", "spiritual", "creative", "intellectual", "adventurous", "enlightening", "fantastic"],
+
+	  "bad_feeling_adjs": ["bitter", "disappointing", "frustrating"],
+
+	  "good_emotive_adjs": ["cathartic", "healing", "mystical"],
+
+	  "bad_emotive_adjs": ["anti-climactic"],
+
+	  //# Intensifiers for use in front of feeling adjectives
+	  "good_degrees": ["ridiculously", "amazingly"],
+	  "neutral_degrees": ["a little bit", "fairly", "pretty", "curiously"],
+	  "bad_degrees": ["worringly", "distressingly"],
+
+	  //# Emotive nouns
+	  "good_feeling_nouns": ["love", "reflection", "romance", "enlightenment", "joy", "desire", "creativity"],
+
+	  "good_emotive_nouns": ["healing", "catharsis", "mysticism", "transcendence", "metamorphisis"],
+
+	  "bad_feeling_nouns": ["bitterness", "disappointment", "sadness", "frustration", "anger", "failure", "boredom", "tension"],
+
+	  "bad_emotive_nouns": ["bad luck", "misfortune", "deja vu"],
+
+	  //# Misc
+	  "prediction_verbs": ["heralds", "marks", "foreshadows", "signifies"],
+
+	  //# You would be well advised to avoid...
+	  "avoid_list": ["shopping", "swimming", "starchy carbs", "engaging strangers in conversation", "making too many jokes", "eating seafood", "rigorous physical activity", "operating heavy machinery", "staying inside for extended periods of time", "alienating your friends", "making life-changing decisions", "prolonging the inevitable", "places of worship", "people who are likely to annoy you", "drinking heavily this weekend"],
+
+	  //# People you may meet
+	  "familiar_people": ["your mother", "your father", "your closest friend", "a family member"],
+
+	  "strange_people": ["a priest or minister", "a doctor", "a lawyer", "a mysterious gentleman", "a kind older lady", "a local public transport identity", "a seductive salesperson", "an old friend", "a washed up celebrity", "an attractive celebrity", "a homeless man", "a homeless woman", "a psychic", "a convicted criminal", "a musician", "a musical friend", "a mathematical friend", "a scientist", "a distant relative", "the love of your life", "your ex", "a bearded man", "your loudest friend", "an acquaintance", "someone from high school", "someone from university", "a reality tv show contestant", "a politician", "a right-wing politician", "a left-wing politician"],
+
+	  //# Locations for various events
+	  "locations": [["at", "the beach"], ["in", "a shopping centre"], ["in", "the bush"], ["in", "a carpark"], ["at", "your house"], ["in", "your street"], ["near", "where you grew up"], ["in", "a club"], ["in", "a supermarket"], ["at", "a place of learning"], ["by", "the side of the road"], ["in", "the centre of the city"], ["in", "the heart of suburbia"], ["on top of", "a building"], ["in", "a park"], ["in", "a restaurant"], ["on", "a bus"], ["on", "a train"], ["on", "a ferry"], ["in", "a waiting room"], ["at", "a library"]],
+
+	  //# Types of discussions
+	  "neutral_discussions": ["discussion", "talk", "conversation", "debate"],
+
+	  "good_discussions": ["chat", "intimate conversation", "chin wag"],
+
+	  "bad_discussions": ["argument", "fight", "altercation", "terse chat", "misunderstanding"],
+
+	  //# Conversation topics (good or bad)
+	  "conversation_topics": ["the past", "the future", "your career", "your future", "music", "a TV show", "a film", "politics", "religion", "their feelings", "your feelings", "their work"]
+	};
+
+	function consolation() {
+	  var rnum = Math.floor(Math.random() * 10);
+	  if (rnum <= 6) {
+	    var when = nu.chooseFrom(["shortly", "soon", "in due time"]);
+	    return ", but don't worry, everything will improve " + when;
+	  } else if (rnum <= 8) {
+	    return ", perhaps you need a change in your life?";
+	  } else {
+	    return "...";
+	  }
+	}
+
+	function positiveIntensify() {
+	  var rnum = Math.floor(Math.random() * 10);
+	  if (rnum <= 5) {
+	    var verb = nu.chooseFrom(["say", "do"]);
+	    return ", and there's nothing anyone can " + verb + " to stop you";
+	  } else if (rnum <= 8) {
+	    return ", and you don't care who knows it";
+	  } else {
+	    return ", and you don't give a damn";
+	  }
+	}
+
+	/**
+	 * Warns of what to avoid
+	 * @returns {*}
+	 */
+	function warning() {
+	  var sentence = "";
+	  var avoidList = getWords("avoid_list");
+	  var avoid = nu.chooseFrom(avoidList);
+	  var rnum = Math.floor(Math.random() * 10);
+	  if (rnum <= 3) {
+	    sentence = "You would be well advised to avoid " + avoid;
+	  } else if (rnum <= 6) {
+	    sentence = "Avoid " + avoid + " at all costs";
+	  } else if (rnum <= 8) {
+	    sentence = "Steer clear of " + avoid + " for a stress-free week";
+	  } else {
+	    sentence = "For a peaceful week, avoid " + avoid;
+	  }
+	  return nu.sentenceCase(sentence);
+	}
+
+	function getWords(name) {
+	  return defLib[name];
+	}
+
+	module.exports.getWords = getWords;
+	module.exports.consolation = consolation;
+	module.exports.warning = warning;
+	module.exports.positiveIntensify = positiveIntensify;
+
+/***/ },
+/* 172 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	/**
+	 * Capitalise the first letter of the sentence and add a full stop.
+	 * @param sentence
+	 * @param exciting
+	 */
+
+	function sentenceCase(sentence, exciting) {
+
+	  if (typeof exciting === 'undefined') {
+	    exciting = false;
+	  }
+
+	  // uppercase the first letter
+	  sentence = sentence[0].toUpperCase() + sentence.slice(1);
+
+	  if (['.', '!', '?'].indexOf(sentence.slice(-1)) > -1) {
+	    return sentence;
+	  } else if (exciting) {
+	    return sentence + "!";
+	  } else {
+	    return sentence + ".";
+	  }
+	}
+
+	/**
+	 * Prefix with 'a' or 'an', as appropriate.
+	 * @param word
+	 * @returns {string}
+	 */
+	function an(word) {
+	  if (["a", "e", "i", "o", "u"].indexOf(word[0]) > -1) {
+	    return "an " + word;
+	  } else {
+	    return "a " + word;
+	  }
+	}
+
+	/**
+	 * A fast means to randomize short arrays.
+	 * http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+	 * @param array
+	 * @returns {*}
+	 */
+	function shuffle(array) {
+	  var currentIndex = array.length,
+	      temporaryValue = void 0,
+	      randomIndex = void 0;
+
+	  // While there remain elements to shuffle...
+	  while (0 !== currentIndex) {
+
+	    // Pick a remaining element...
+	    randomIndex = Math.floor(Math.random() * currentIndex);
+	    currentIndex -= 1;
+
+	    // And swap it with the current element.
+	    temporaryValue = array[currentIndex];
+	    array[currentIndex] = array[randomIndex];
+	    array[randomIndex] = temporaryValue;
+	  }
+
+	  return array;
+	}
+
+	/**
+	 * Return random item from a list.
+	 * @param items
+	 * @returns {*}
+	 */
+	function chooseFrom(items) {
+	  return items[Math.floor(Math.random() * items.length)];
+	}
+
+	/**
+	 * Convert 'ing' endings to 'ed' endings.
+	 * @param word
+	 * @returns {*}
+	 */
+	function ingToEd(word) {
+	  if (word.slice(-3) === "ing") {
+	    return word.slice(0, -3) + "ed";
+	  } else {
+	    return word;
+	  }
+	}
+
+	module.exports.sentenceCase = sentenceCase;
+	module.exports.shuffle = shuffle;
+	module.exports.chooseFrom = chooseFrom;
+	module.exports.an = an;
+	module.exports.ingToEd = ingToEd;
+
+/***/ },
+/* 173 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _nostra_utils = __webpack_require__(172);
+
+	var nu = _interopRequireWildcard(_nostra_utils);
+
+	var _dateformat = __webpack_require__(174);
+
+	var _dateformat2 = _interopRequireDefault(_dateformat);
+
+	var _word_library = __webpack_require__(171);
+
+	var _word_library2 = _interopRequireDefault(_word_library);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	/**
+	 * Generate a mood-based sentence about a relationship
+	 * @param mood
+	 * @returns {*}
+	 */
+	function relationship(mood) {
+	  var verb = void 0,
+	      talk = void 0;
+
+	  if (mood === "good") {
+	    verb = "strengthened";
+	    talk = "discussion";
+	  } else {
+	    verb = "strained";
+	    talk = "argument";
+	  }
+
+	  var familiar_people = _word_library2.default.getWords("familiar_people");
+	  var conversation_topics = _word_library2.default.getWords("conversation_topics");
+
+	  var person = nu.chooseFrom(familiar_people);
+	  var topic = nu.chooseFrom(conversation_topics);
+
+	  var sentence = 'Your relationship with ' + person + ' may be ' + verb + ' ';
+	  sentence += 'as the result of ' + nu.an(talk) + ' about ' + topic;
+
+	  return nu.sentenceCase(sentence);
+	}
+
+	/**
+	 * Generate a few sentences about a meeting with another person.
+	 * @param mood
+	 */
+	function encounter(mood) {
+
+	  //Sentence 1: The meeting
+	  var familiar_people = _word_library2.default.getWords("familiar_people");
+	  var strange_people = _word_library2.default.getWords("strange_people");
+	  var locations = _word_library2.default.getWords("locations");
+
+	  var person = nu.chooseFrom(familiar_people.concat(strange_people));
+	  var location = nu.chooseFrom(_word_library2.default.getWords("locations"));
+	  var preposition = location[0];
+	  location = location[1];
+
+	  var s1 = 'You may meet ' + person + ' ' + preposition + ' ' + location + '.';
+
+	  // Sentence 2: The discussion
+	  var discussions = _word_library2.default.getWords("neutral_discussions");
+	  discussions.concat(_word_library2.default.getWords(mood + "_discussions"));
+	  var feeling_nouns = _word_library2.default.getWords(mood + "_feeling_nouns");
+	  var emotive_nouns = _word_library2.default.getWords(mood + "_emotive_nouns");
+	  var conversation_topics = _word_library2.default.getWords("conversation_topics");
+
+	  var discussion = nu.chooseFrom(discussions);
+	  var rnum = Math.floor(Math.random() * 10);
+	  if (rnum < -5) {
+	    var _feeling = nu.chooseFrom(feeling_nouns);
+	    _feeling = "feelings of " + _feeling;
+	  } else {
+	    feeling = nu.chooseFrom(emotive_nouns);
+	  }
+	  var topic = nu.chooseFrom(conversation_topics);
+
+	  var s2 = nu.an(discussion) + ' about ' + topic + ' may lead to ' + feeling + '.';
+	  s2 = nu.sentenceCase(s2);
+
+	  return s1 + ' ' + s2;
+	}
+
+	/**
+	 * A mood-based feeling
+	 * @param mood
+	 * @returns {*}
+	 */
+	function feeling(mood) {
+	  var rnum = Math.floor(Math.random() * 10);
+	  var adjectives = _word_library2.default.getWords(mood + "_feeling_adjs");
+	  //var degrees = getWords("neutral_degrees") + getWords(mood + "_degrees");
+	  var degrees = _word_library2.default.getWords("neutral_degrees").concat(_word_library2.default.getWords(mood + "_degrees"));
+
+	  var adj = nu.ingToEd(nu.chooseFrom(adjectives));
+	  var degree = nu.chooseFrom(degrees);
+	  var ending = void 0;
+	  if (mood === "good") {
+	    ending = _word_library2.default.positiveIntensify();
+	  } else {
+	    ending = _word_library2.default.consolation();
+	  }
+	  var exciting = false;
+	  if (mood === "GOOD" && rnum <= 5) {
+	    exciting = true;
+	  }
+	  var are = nu.chooseFrom([" are", "'re"]);
+
+	  var sentence = 'You' + are + ' feeling ' + degree + ' ' + adj + ending;
+
+	  return nu.sentenceCase(sentence, exciting);
+	}
+
+	/**
+	 * Generate a random prediction sentence containing a date.
+	 * @returns {*}
+	 */
+	function datePredict() {
+
+	  var daysAhead = Math.floor(Math.random() * 5) + 2;
+
+	  var day = new Date();
+	  day.setDate(day.getDate() + daysAhead);
+	  var monthStr = (0, _dateformat2.default)(day, "mmmm");
+	  var dayStr = (0, _dateformat2.default)(day, "d");
+
+	  var rnum = Math.floor(Math.random() * 10);
+	  var str = void 0;
+	  if (rnum <= 4) {
+	    str = monthStr + ' ' + dayStr + ' will be an important day for you';
+	  } else if (rnum <= 7) {
+	    str = 'Interesting things await you on ' + monthStr + ' ' + dayStr;
+	  } else {
+	    str = 'The events of ' + monthStr + ' ' + dayStr + ' have the potential to change your life.';
+	  }
+	  return nu.sentenceCase(str);
+	}
+
+	module.exports.relationship = relationship;
+	module.exports.encounter = encounter;
+	module.exports.feeling = feeling;
+	module.exports.datePredict = datePredict;
+
+/***/ },
+/* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;/*
+	 * Date Format 1.2.3
+	 * (c) 2007-2009 Steven Levithan <stevenlevithan.com>
+	 * MIT license
+	 *
+	 * Includes enhancements by Scott Trenda <scott.trenda.net>
+	 * and Kris Kowal <cixar.com/~kris.kowal/>
+	 *
+	 * Accepts a date, a mask, or a date and a mask.
+	 * Returns a formatted version of the given date.
+	 * The date defaults to the current date/time.
+	 * The mask defaults to dateFormat.masks.default.
+	 */
+
+	(function(global) {
+	  'use strict';
+
+	  var dateFormat = (function() {
+	      var token = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZWN]|'[^']*'|'[^']*'/g;
+	      var timezone = /\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g;
+	      var timezoneClip = /[^-+\dA-Z]/g;
+	  
+	      // Regexes and supporting functions are cached through closure
+	      return function (date, mask, utc, gmt) {
+	  
+	        // You can't provide utc if you skip other args (use the 'UTC:' mask prefix)
+	        if (arguments.length === 1 && kindOf(date) === 'string' && !/\d/.test(date)) {
+	          mask = date;
+	          date = undefined;
+	        }
+	  
+	        date = date || new Date;
+	  
+	        if(!(date instanceof Date)) {
+	          date = new Date(date);
+	        }
+	  
+	        if (isNaN(date)) {
+	          throw TypeError('Invalid date');
+	        }
+	  
+	        mask = String(dateFormat.masks[mask] || mask || dateFormat.masks['default']);
+	  
+	        // Allow setting the utc/gmt argument via the mask
+	        var maskSlice = mask.slice(0, 4);
+	        if (maskSlice === 'UTC:' || maskSlice === 'GMT:') {
+	          mask = mask.slice(4);
+	          utc = true;
+	          if (maskSlice === 'GMT:') {
+	            gmt = true;
+	          }
+	        }
+	  
+	        var _ = utc ? 'getUTC' : 'get';
+	        var d = date[_ + 'Date']();
+	        var D = date[_ + 'Day']();
+	        var m = date[_ + 'Month']();
+	        var y = date[_ + 'FullYear']();
+	        var H = date[_ + 'Hours']();
+	        var M = date[_ + 'Minutes']();
+	        var s = date[_ + 'Seconds']();
+	        var L = date[_ + 'Milliseconds']();
+	        var o = utc ? 0 : date.getTimezoneOffset();
+	        var W = getWeek(date);
+	        var N = getDayOfWeek(date);
+	        var flags = {
+	          d:    d,
+	          dd:   pad(d),
+	          ddd:  dateFormat.i18n.dayNames[D],
+	          dddd: dateFormat.i18n.dayNames[D + 7],
+	          m:    m + 1,
+	          mm:   pad(m + 1),
+	          mmm:  dateFormat.i18n.monthNames[m],
+	          mmmm: dateFormat.i18n.monthNames[m + 12],
+	          yy:   String(y).slice(2),
+	          yyyy: y,
+	          h:    H % 12 || 12,
+	          hh:   pad(H % 12 || 12),
+	          H:    H,
+	          HH:   pad(H),
+	          M:    M,
+	          MM:   pad(M),
+	          s:    s,
+	          ss:   pad(s),
+	          l:    pad(L, 3),
+	          L:    pad(Math.round(L / 10)),
+	          t:    H < 12 ? 'a'  : 'p',
+	          tt:   H < 12 ? 'am' : 'pm',
+	          T:    H < 12 ? 'A'  : 'P',
+	          TT:   H < 12 ? 'AM' : 'PM',
+	          Z:    gmt ? 'GMT' : utc ? 'UTC' : (String(date).match(timezone) || ['']).pop().replace(timezoneClip, ''),
+	          o:    (o > 0 ? '-' : '+') + pad(Math.floor(Math.abs(o) / 60) * 100 + Math.abs(o) % 60, 4),
+	          S:    ['th', 'st', 'nd', 'rd'][d % 10 > 3 ? 0 : (d % 100 - d % 10 != 10) * d % 10],
+	          W:    W,
+	          N:    N
+	        };
+	  
+	        return mask.replace(token, function (match) {
+	          if (match in flags) {
+	            return flags[match];
+	          }
+	          return match.slice(1, match.length - 1);
+	        });
+	      };
+	    })();
+
+	  dateFormat.masks = {
+	    'default':               'ddd mmm dd yyyy HH:MM:ss',
+	    'shortDate':             'm/d/yy',
+	    'mediumDate':            'mmm d, yyyy',
+	    'longDate':              'mmmm d, yyyy',
+	    'fullDate':              'dddd, mmmm d, yyyy',
+	    'shortTime':             'h:MM TT',
+	    'mediumTime':            'h:MM:ss TT',
+	    'longTime':              'h:MM:ss TT Z',
+	    'isoDate':               'yyyy-mm-dd',
+	    'isoTime':               'HH:MM:ss',
+	    'isoDateTime':           'yyyy-mm-dd\'T\'HH:MM:sso',
+	    'isoUtcDateTime':        'UTC:yyyy-mm-dd\'T\'HH:MM:ss\'Z\'',
+	    'expiresHeaderFormat':   'ddd, dd mmm yyyy HH:MM:ss Z'
+	  };
+
+	  // Internationalization strings
+	  dateFormat.i18n = {
+	    dayNames: [
+	      'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat',
+	      'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
+	    ],
+	    monthNames: [
+	      'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+	      'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
+	    ]
+	  };
+
+	function pad(val, len) {
+	  val = String(val);
+	  len = len || 2;
+	  while (val.length < len) {
+	    val = '0' + val;
+	  }
+	  return val;
+	}
+
+	/**
+	 * Get the ISO 8601 week number
+	 * Based on comments from
+	 * http://techblog.procurios.nl/k/n618/news/view/33796/14863/Calculate-ISO-8601-week-and-year-in-javascript.html
+	 *
+	 * @param  {Object} `date`
+	 * @return {Number}
+	 */
+	function getWeek(date) {
+	  // Remove time components of date
+	  var targetThursday = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+
+	  // Change date to Thursday same week
+	  targetThursday.setDate(targetThursday.getDate() - ((targetThursday.getDay() + 6) % 7) + 3);
+
+	  // Take January 4th as it is always in week 1 (see ISO 8601)
+	  var firstThursday = new Date(targetThursday.getFullYear(), 0, 4);
+
+	  // Change date to Thursday same week
+	  firstThursday.setDate(firstThursday.getDate() - ((firstThursday.getDay() + 6) % 7) + 3);
+
+	  // Check if daylight-saving-time-switch occured and correct for it
+	  var ds = targetThursday.getTimezoneOffset() - firstThursday.getTimezoneOffset();
+	  targetThursday.setHours(targetThursday.getHours() - ds);
+
+	  // Number of weeks between target Thursday and first Thursday
+	  var weekDiff = (targetThursday - firstThursday) / (86400000*7);
+	  return 1 + Math.floor(weekDiff);
+	}
+
+	/**
+	 * Get ISO-8601 numeric representation of the day of the week
+	 * 1 (for Monday) through 7 (for Sunday)
+	 * 
+	 * @param  {Object} `date`
+	 * @return {Number}
+	 */
+	function getDayOfWeek(date) {
+	  var dow = date.getDay();
+	  if(dow === 0) {
+	    dow = 7;
+	  }
+	  return dow;
+	}
+
+	/**
+	 * kind-of shortcut
+	 * @param  {*} val
+	 * @return {String}
+	 */
+	function kindOf(val) {
+	  if (val === null) {
+	    return 'null';
+	  }
+
+	  if (val === undefined) {
+	    return 'undefined';
+	  }
+
+	  if (typeof val !== 'object') {
+	    return typeof val;
+	  }
+
+	  if (Array.isArray(val)) {
+	    return 'array';
+	  }
+
+	  return {}.toString.call(val)
+	    .slice(8, -1).toLowerCase();
+	};
+
+
+
+	  if (true) {
+	    !(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+	      return dateFormat;
+	    }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  } else if (typeof exports === 'object') {
+	    module.exports = dateFormat;
+	  } else {
+	    global.dateFormat = dateFormat;
+	  }
+	})(this);
+
+
+/***/ },
+/* 175 */
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	/**
+	 * This is the web browser implementation of `debug()`.
+	 *
+	 * Expose `debug()` as the module.
+	 */
+
+	exports = module.exports = __webpack_require__(176);
+	exports.log = log;
+	exports.formatArgs = formatArgs;
+	exports.save = save;
+	exports.load = load;
+	exports.useColors = useColors;
+	exports.storage = 'undefined' != typeof chrome
+	               && 'undefined' != typeof chrome.storage
+	                  ? chrome.storage.local
+	                  : localstorage();
+
+	/**
+	 * Colors.
+	 */
+
+	exports.colors = [
+	  'lightseagreen',
+	  'forestgreen',
+	  'goldenrod',
+	  'dodgerblue',
+	  'darkorchid',
+	  'crimson'
+	];
+
+	/**
+	 * Currently only WebKit-based Web Inspectors, Firefox >= v31,
+	 * and the Firebug extension (any Firefox version) are known
+	 * to support "%c" CSS customizations.
+	 *
+	 * TODO: add a `localStorage` variable to explicitly enable/disable colors
+	 */
+
+	function useColors() {
+	  // is webkit? http://stackoverflow.com/a/16459606/376773
+	  return ('WebkitAppearance' in document.documentElement.style) ||
+	    // is firebug? http://stackoverflow.com/a/398120/376773
+	    (window.console && (console.firebug || (console.exception && console.table))) ||
+	    // is firefox >= v31?
+	    // https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
+	    (navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/) && parseInt(RegExp.$1, 10) >= 31);
+	}
+
+	/**
+	 * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
+	 */
+
+	exports.formatters.j = function(v) {
+	  return JSON.stringify(v);
+	};
+
+
+	/**
+	 * Colorize log arguments if enabled.
+	 *
+	 * @api public
+	 */
+
+	function formatArgs() {
+	  var args = arguments;
+	  var useColors = this.useColors;
+
+	  args[0] = (useColors ? '%c' : '')
+	    + this.namespace
+	    + (useColors ? ' %c' : ' ')
+	    + args[0]
+	    + (useColors ? '%c ' : ' ')
+	    + '+' + exports.humanize(this.diff);
+
+	  if (!useColors) return args;
+
+	  var c = 'color: ' + this.color;
+	  args = [args[0], c, 'color: inherit'].concat(Array.prototype.slice.call(args, 1));
+
+	  // the final "%c" is somewhat tricky, because there could be other
+	  // arguments passed either before or after the %c, so we need to
+	  // figure out the correct index to insert the CSS into
+	  var index = 0;
+	  var lastC = 0;
+	  args[0].replace(/%[a-z%]/g, function(match) {
+	    if ('%%' === match) return;
+	    index++;
+	    if ('%c' === match) {
+	      // we only are interested in the *last* %c
+	      // (the user may have provided their own)
+	      lastC = index;
+	    }
+	  });
+
+	  args.splice(lastC, 0, c);
+	  return args;
+	}
+
+	/**
+	 * Invokes `console.log()` when available.
+	 * No-op when `console.log` is not a "function".
+	 *
+	 * @api public
+	 */
+
+	function log() {
+	  // this hackery is required for IE8/9, where
+	  // the `console.log` function doesn't have 'apply'
+	  return 'object' === typeof console
+	    && console.log
+	    && Function.prototype.apply.call(console.log, console, arguments);
+	}
+
+	/**
+	 * Save `namespaces`.
+	 *
+	 * @param {String} namespaces
+	 * @api private
+	 */
+
+	function save(namespaces) {
+	  try {
+	    if (null == namespaces) {
+	      exports.storage.removeItem('debug');
+	    } else {
+	      exports.storage.debug = namespaces;
+	    }
+	  } catch(e) {}
+	}
+
+	/**
+	 * Load `namespaces`.
+	 *
+	 * @return {String} returns the previously persisted debug modes
+	 * @api private
+	 */
+
+	function load() {
+	  var r;
+	  try {
+	    r = exports.storage.debug;
+	  } catch(e) {}
+	  return r;
+	}
+
+	/**
+	 * Enable namespaces listed in `localStorage.debug` initially.
+	 */
+
+	exports.enable(load());
+
+	/**
+	 * Localstorage attempts to return the localstorage.
+	 *
+	 * This is necessary because safari throws
+	 * when a user disables cookies/localstorage
+	 * and you attempt to access it.
+	 *
+	 * @return {LocalStorage}
+	 * @api private
+	 */
+
+	function localstorage(){
+	  try {
+	    return window.localStorage;
+	  } catch (e) {}
+	}
+
+
+/***/ },
+/* 176 */
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	/**
+	 * This is the common logic for both the Node.js and web browser
+	 * implementations of `debug()`.
+	 *
+	 * Expose `debug()` as the module.
+	 */
+
+	exports = module.exports = debug;
+	exports.coerce = coerce;
+	exports.disable = disable;
+	exports.enable = enable;
+	exports.enabled = enabled;
+	exports.humanize = __webpack_require__(177);
+
+	/**
+	 * The currently active debug mode names, and names to skip.
+	 */
+
+	exports.names = [];
+	exports.skips = [];
+
+	/**
+	 * Map of special "%n" handling functions, for the debug "format" argument.
+	 *
+	 * Valid key names are a single, lowercased letter, i.e. "n".
+	 */
+
+	exports.formatters = {};
+
+	/**
+	 * Previously assigned color.
+	 */
+
+	var prevColor = 0;
+
+	/**
+	 * Previous log timestamp.
+	 */
+
+	var prevTime;
+
+	/**
+	 * Select a color.
+	 *
+	 * @return {Number}
+	 * @api private
+	 */
+
+	function selectColor() {
+	  return exports.colors[prevColor++ % exports.colors.length];
+	}
+
+	/**
+	 * Create a debugger with the given `namespace`.
+	 *
+	 * @param {String} namespace
+	 * @return {Function}
+	 * @api public
+	 */
+
+	function debug(namespace) {
+
+	  // define the `disabled` version
+	  function disabled() {
+	  }
+	  disabled.enabled = false;
+
+	  // define the `enabled` version
+	  function enabled() {
+
+	    var self = enabled;
+
+	    // set `diff` timestamp
+	    var curr = +new Date();
+	    var ms = curr - (prevTime || curr);
+	    self.diff = ms;
+	    self.prev = prevTime;
+	    self.curr = curr;
+	    prevTime = curr;
+
+	    // add the `color` if not set
+	    if (null == self.useColors) self.useColors = exports.useColors();
+	    if (null == self.color && self.useColors) self.color = selectColor();
+
+	    var args = Array.prototype.slice.call(arguments);
+
+	    args[0] = exports.coerce(args[0]);
+
+	    if ('string' !== typeof args[0]) {
+	      // anything else let's inspect with %o
+	      args = ['%o'].concat(args);
+	    }
+
+	    // apply any `formatters` transformations
+	    var index = 0;
+	    args[0] = args[0].replace(/%([a-z%])/g, function(match, format) {
+	      // if we encounter an escaped % then don't increase the array index
+	      if (match === '%%') return match;
+	      index++;
+	      var formatter = exports.formatters[format];
+	      if ('function' === typeof formatter) {
+	        var val = args[index];
+	        match = formatter.call(self, val);
+
+	        // now we need to remove `args[index]` since it's inlined in the `format`
+	        args.splice(index, 1);
+	        index--;
+	      }
+	      return match;
+	    });
+
+	    if ('function' === typeof exports.formatArgs) {
+	      args = exports.formatArgs.apply(self, args);
+	    }
+	    var logFn = enabled.log || exports.log || console.log.bind(console);
+	    logFn.apply(self, args);
+	  }
+	  enabled.enabled = true;
+
+	  var fn = exports.enabled(namespace) ? enabled : disabled;
+
+	  fn.namespace = namespace;
+
+	  return fn;
+	}
+
+	/**
+	 * Enables a debug mode by namespaces. This can include modes
+	 * separated by a colon and wildcards.
+	 *
+	 * @param {String} namespaces
+	 * @api public
+	 */
+
+	function enable(namespaces) {
+	  exports.save(namespaces);
+
+	  var split = (namespaces || '').split(/[\s,]+/);
+	  var len = split.length;
+
+	  for (var i = 0; i < len; i++) {
+	    if (!split[i]) continue; // ignore empty strings
+	    namespaces = split[i].replace(/\*/g, '.*?');
+	    if (namespaces[0] === '-') {
+	      exports.skips.push(new RegExp('^' + namespaces.substr(1) + '$'));
+	    } else {
+	      exports.names.push(new RegExp('^' + namespaces + '$'));
+	    }
+	  }
+	}
+
+	/**
+	 * Disable debug output.
+	 *
+	 * @api public
+	 */
+
+	function disable() {
+	  exports.enable('');
+	}
+
+	/**
+	 * Returns true if the given mode name is enabled, false otherwise.
+	 *
+	 * @param {String} name
+	 * @return {Boolean}
+	 * @api public
+	 */
+
+	function enabled(name) {
+	  var i, len;
+	  for (i = 0, len = exports.skips.length; i < len; i++) {
+	    if (exports.skips[i].test(name)) {
+	      return false;
+	    }
+	  }
+	  for (i = 0, len = exports.names.length; i < len; i++) {
+	    if (exports.names[i].test(name)) {
+	      return true;
+	    }
+	  }
+	  return false;
+	}
+
+	/**
+	 * Coerce `val`.
+	 *
+	 * @param {Mixed} val
+	 * @return {Mixed}
+	 * @api private
+	 */
+
+	function coerce(val) {
+	  if (val instanceof Error) return val.stack || val.message;
+	  return val;
+	}
+
+
+/***/ },
+/* 177 */
+/***/ function(module, exports) {
+
+	/**
+	 * Helpers.
+	 */
+
+	var s = 1000;
+	var m = s * 60;
+	var h = m * 60;
+	var d = h * 24;
+	var y = d * 365.25;
+
+	/**
+	 * Parse or format the given `val`.
+	 *
+	 * Options:
+	 *
+	 *  - `long` verbose formatting [false]
+	 *
+	 * @param {String|Number} val
+	 * @param {Object} options
+	 * @return {String|Number}
+	 * @api public
+	 */
+
+	module.exports = function(val, options){
+	  options = options || {};
+	  if ('string' == typeof val) return parse(val);
+	  return options.long
+	    ? long(val)
+	    : short(val);
+	};
+
+	/**
+	 * Parse the given `str` and return milliseconds.
+	 *
+	 * @param {String} str
+	 * @return {Number}
+	 * @api private
+	 */
+
+	function parse(str) {
+	  str = '' + str;
+	  if (str.length > 10000) return;
+	  var match = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(str);
+	  if (!match) return;
+	  var n = parseFloat(match[1]);
+	  var type = (match[2] || 'ms').toLowerCase();
+	  switch (type) {
+	    case 'years':
+	    case 'year':
+	    case 'yrs':
+	    case 'yr':
+	    case 'y':
+	      return n * y;
+	    case 'days':
+	    case 'day':
+	    case 'd':
+	      return n * d;
+	    case 'hours':
+	    case 'hour':
+	    case 'hrs':
+	    case 'hr':
+	    case 'h':
+	      return n * h;
+	    case 'minutes':
+	    case 'minute':
+	    case 'mins':
+	    case 'min':
+	    case 'm':
+	      return n * m;
+	    case 'seconds':
+	    case 'second':
+	    case 'secs':
+	    case 'sec':
+	    case 's':
+	      return n * s;
+	    case 'milliseconds':
+	    case 'millisecond':
+	    case 'msecs':
+	    case 'msec':
+	    case 'ms':
+	      return n;
+	  }
+	}
+
+	/**
+	 * Short format for `ms`.
+	 *
+	 * @param {Number} ms
+	 * @return {String}
+	 * @api private
+	 */
+
+	function short(ms) {
+	  if (ms >= d) return Math.round(ms / d) + 'd';
+	  if (ms >= h) return Math.round(ms / h) + 'h';
+	  if (ms >= m) return Math.round(ms / m) + 'm';
+	  if (ms >= s) return Math.round(ms / s) + 's';
+	  return ms + 'ms';
+	}
+
+	/**
+	 * Long format for `ms`.
+	 *
+	 * @param {Number} ms
+	 * @return {String}
+	 * @api private
+	 */
+
+	function long(ms) {
+	  return plural(ms, d, 'day')
+	    || plural(ms, h, 'hour')
+	    || plural(ms, m, 'minute')
+	    || plural(ms, s, 'second')
+	    || ms + ' ms';
+	}
+
+	/**
+	 * Pluralization helper.
+	 */
+
+	function plural(ms, n, name) {
+	  if (ms < n) return;
+	  if (ms < n * 1.5) return Math.floor(ms / n) + ' ' + name;
+	  return Math.ceil(ms / n) + ' ' + name + 's';
+	}
+
 
 /***/ }
 /******/ ]);
