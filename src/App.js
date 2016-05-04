@@ -2,8 +2,7 @@
 
 import React from 'react';
 import { render } from 'react-dom';
-import CountryList from './CountryList';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 const App = React.createClass({
 
@@ -38,7 +37,6 @@ const App = React.createClass({
     return (
         <div>
           Hello, world!
-          <CountryList countries={this.state.countries}/>
         </div>
     );
   }
